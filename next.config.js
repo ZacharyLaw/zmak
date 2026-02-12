@@ -11,7 +11,7 @@ const withPWA = require('next-pwa')({
     images: {
         unoptimized: true
     },
-    basePath: "/",
+    basePath: "/zmak",
 	
 
 })
@@ -24,5 +24,7 @@ module.exports = withPWA({
         unoptimized: true
     },
 	devIndicatorServerState: false,
-	devIndicators: false
+	devIndicators: false,
+	assetPrefix:"/zmak/",
+	basePath:"/zmak"
 })
