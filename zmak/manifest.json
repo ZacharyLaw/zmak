@@ -11,7 +11,7 @@
 	"start_url": "/zmak",
 	"orientation": "portrait",
 	"display": "standalone",
-	"scope": "/zmak",
+	"scope": "/",
 	"theme_color":"#ffffff",
 	"background_color":"#ffffff"
 }
