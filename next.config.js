@@ -5,6 +5,11 @@ const withPWA = require('next-pwa')({
 	register: true,
 	skipWaiting: true,
 	turbopack:{},
+	 output: 'export',
+    images: {
+        unoptimized: true
+    },
+    basePath: "/"
 
 })
 
