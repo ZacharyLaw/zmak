@@ -31,20 +31,12 @@ jobs:
     environment: github-pages
     runs-on: ubuntu-latest
     env:
-      NEXT_PUBLIC_API: ${{secrets.NEXT_PUBLIC_API}}
-      NEXT_PUBLIC_AUTHDOMAIN: ${{secrets.NEXT_PUBLIC_AUTHDOMAIN}}
-      NEXT_PUBLIC_PROJECTID: ${{secrets.NEXT_PUBLIC_PROJECTID}}
-      NEXT_PUBLIC_STORAGEBUCKET: ${{secrets.NEXT_PUBLIC_STORAGEBUCKET}}
-      NEXT_PUBLIC_MESSAGINGSENDERID: ${{secrets.NEXT_PUBLIC_MESSAGINGSENDERID}}
-      NEXT_PUBLIC_APPID: ${{secrets.NEXT_PUBLIC_APPID}}
-      NEXT_PUBLIC_MEASUREMENTID: ${{secrets.NEXT_PUBLIC_MEASUREMENTID}}
-      NEXT_PUBLIC_TEST: ${{secrets.NEXT_PUBLIC_TEST}}
-      FIRE_apiKey: ${{secrets.FIRE_apiKey}}
-      FIRE_authDomain: ${{secrets.FIRE_authDomain}}
-      FIRE_projectId: ${{secrets.FIRE_projectId}}
-      FIRE_storageBucket: ${{secrets.FIRE_storageBucket}}
-      FIRE_messagingSenderId: ${{secrets.FIRE_messagingSenderId}}
-      FIRE_appId: ${{secrets.FIRE_appId}}
+      NEXT_PUBLIC_FIRE_API_KEY: ${{secrets.NEXT_PUBLIC_FIRE_API_KEY}}
+      NEXT_PUBLIC_FIRE_AUTH_DOMAIN: ${{secrets.NEXT_PUBLIC_FIRE_AUTH_DOMAIN}}
+      NEXT_PUBLIC_FIRE_PROJECT_ID: ${{secrets.NEXT_PUBLIC_FIRE_PROJECT_ID}}
+      NEXT_PUBLIC_FIRE_STORAGE_BUCKET: ${{secrets.NEXT_PUBLIC_FIRE_STORAGE_BUCKET}}
+      NEXT_PUBLIC_FIRE_MESSAGING_SENDER_ID: ${{secrets.NEXT_PUBLIC_FIRE_MESSAGING_SENDER_ID}}
+      NEXT_PUBLIC_FIRE_APP_ID: ${{secrets.NEXT_PUBLIC_FIRE_APP_ID}}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -84,13 +76,6 @@ jobs:
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Next.js
-        env:
-          FIRE_apiKey: ${{secrets.FIRE_apiKey}}
-          FIRE_authDomain: ${{secrets.FIRE_authDomain}}
-          FIRE_projectId: ${{secrets.FIRE_projectId}}
-          FIRE_storageBucket: ${{secrets.FIRE_storageBucket}}
-          FIRE_messagingSenderId: ${{secrets.FIRE_messagingSenderId}}
-          FIRE_appId: ${{secrets.FIRE_appId}}
         run: |
           echo "${{secrets.NEXT_PUBLIC_TEST}}"
           touch .env.local

@@ -23,7 +23,6 @@ module.exports = withPWA({
     images: {
         unoptimized: true
     },
-	devIndicatorServerState: false,
 	devIndicators: false,
 	assetPrefix:"/zmak/",
 	basePath:"/zmak"
