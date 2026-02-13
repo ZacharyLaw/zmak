@@ -21,7 +21,8 @@ export default function RealtimeHashDoc() {
   const [error, setError] = useState<string | null>(null);
   const [exists, setExists] = useState<boolean | null>(null); // tracks whether doc exists in Firestore
 
-  const unsubRef = useRef<() => void | null>(null);
+const unsubRef = useRef<(() => void) | null>(null);
+
   const timers = useMemo(() => ({} as Record<string, number>), []);
 
   function parseHash(h: string | null): string | null {
@@ -36,10 +37,10 @@ export default function RealtimeHashDoc() {
     setError(null);
     setExists(null);
 
-    if (unsubRef.current) {
-      try { unsubRef.current(); } catch {}
-      unsubRef.current = null;
-    }
+   if (unsubRef.current) {
+try { unsubRef.current(); } catch {}
+unsubRef.current = null;
+}
 
     const docRef = firestoreDoc(db, "markdown", id);
 
