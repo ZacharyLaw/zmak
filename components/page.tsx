@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import Appbar from '@/components/appbar'
-import BottomNav from '@/components/bottom-nav'
 
 interface Props {
 	title?: string
@@ -22,7 +21,6 @@ const Page = ({ title, children }: Props) => (
 			<div className='p-6'>{children}</div>
 		</main>
 
-		<BottomNav />
 	</>
 )
 
