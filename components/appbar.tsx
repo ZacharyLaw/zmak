@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react';
 
 const links = [
-	{ label: 'Github', href: '/story' },
+	{ label: 'Github', href: 'https://github.com/ZacharyLaw/zmak' },
 ]
 
 const Appbar = () => {

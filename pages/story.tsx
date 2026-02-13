@@ -1,9 +1,7 @@
 import Page from '@/components/page'
-import Section from '@/components/section'
 
 const Story = () => (
 	<Page>
-		<Section>
 			<h2 className='text-xl font-semibold'>Story</h2>
 
 			<div className='mt-2'>
@@ -22,7 +20,6 @@ const Story = () => (
 					, a two sentence story
 				</p>
 			</div>
-		</Section>
 	</Page>
 )
 
