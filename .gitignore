@@ -1,5 +1,6 @@
 # Generated via Next.js
 .next
+.secret
 
 # Generated via Node.js
 node_modules
@@ -7,3 +8,4 @@ node_modules
 # Generated via next-pwa
 **/public/workbox**
 **/public/sw**
+.env.local

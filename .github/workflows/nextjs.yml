@@ -39,6 +39,12 @@ jobs:
       NEXT_PUBLIC_APPID: ${{secrets.NEXT_PUBLIC_APPID}}
       NEXT_PUBLIC_MEASUREMENTID: ${{secrets.NEXT_PUBLIC_MEASUREMENTID}}
       NEXT_PUBLIC_TEST: ${{secrets.NEXT_PUBLIC_TEST}}
+      FIRE_apiKey: ${{secrets.FIRE_apiKey}}
+      FIRE_authDomain: ${{secrets.FIRE_authDomain}}
+      FIRE_projectId: ${{secrets.FIRE_projectId}}
+      FIRE_storageBucket: ${{secrets.FIRE_storageBucket}}
+      FIRE_messagingSenderId: ${{secrets.FIRE_messagingSenderId}}
+      FIRE_appId: ${{secrets.FIRE_appId}}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -78,6 +84,13 @@ jobs:
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Next.js
+        env:
+          FIRE_apiKey: ${{secrets.FIRE_apiKey}}
+          FIRE_authDomain: ${{secrets.FIRE_authDomain}}
+          FIRE_projectId: ${{secrets.FIRE_projectId}}
+          FIRE_storageBucket: ${{secrets.FIRE_storageBucket}}
+          FIRE_messagingSenderId: ${{secrets.FIRE_messagingSenderId}}
+          FIRE_appId: ${{secrets.FIRE_appId}}
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
