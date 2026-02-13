@@ -3,9 +3,7 @@ import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react';
 
 const links = [
-	{ label: 'Story', href: '/story' },
-	{ label: 'Recipes', href: '/recipes' },
-	{ label: 'Tmp', href: '/tmp' },
+	{ label: 'Github', href: '/story' },
 ]
 
 const Appbar = () => {
