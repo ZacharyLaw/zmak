@@ -3,7 +3,7 @@
 
 import React, { useEffect, useState } from "react";
 import { collection, onSnapshot, query, orderBy } from "firebase/firestore";
-import { db } from "../src/lib/fire";
+import { db } from "lib/fire";
 
 type DocItem = {
   id: string;
